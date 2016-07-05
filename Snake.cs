@@ -20,11 +20,11 @@ namespace C_sharp_Snake
 
         public Snake()
         {
-            Rectangle rectangle = new Rectangle(0, 0, width, height);
+            Rectangle rectangle = new Rectangle(180, 180, width, height);
             List<Rectangle> bodyList = new List<Rectangle>();
             bodyList.Add(rectangle);
             body = bodyList.ToArray();
-            direction = Direction.Down;
+            direction = Direction.Right;
         }
 
         public void draw(PaintEventArgs e)

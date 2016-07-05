@@ -63,7 +63,7 @@ namespace C_sharp_Snake
             if (snake.body[0].IntersectsWith(food.food))
             {
                 snake.eat();
-                food = new Food();
+                food = new Food(snake);
                 score++;
                 labelScore.Text = string.Format("Score: {0}", score);
             }
@@ -77,12 +77,20 @@ namespace C_sharp_Snake
         private void buttonPlay_Click(object sender, EventArgs e)
         {
             snake = new Snake();
-            food = new Food();
+            food = new Food(snake);
             score = 0;
             labelScore.Text = string.Format("Score: {0}", score);
 
             timer.Start();
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutForm aboutForm = new AboutForm();
+            aboutForm.Show();
+        }
+
+        
 
     }
 }
